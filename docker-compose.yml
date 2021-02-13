@@ -1,0 +1,8 @@
+services:
+  web:
+    image: library/nginx:alpine
+    volumes:
+      - ./app:/var/www/html
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    ports:
+      - 80:80
