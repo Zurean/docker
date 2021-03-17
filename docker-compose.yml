@@ -25,3 +25,13 @@ services:
       POSTGRES_PASSWORD: secret
     ports:
       - 5432:5432
+
+  mongo:
+    image: library/mongo:latest
+    volumes:
+      - ./app/mdb:/data/db
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_DATABASE: mongo
